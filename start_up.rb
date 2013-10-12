@@ -1,3 +1,5 @@
-include(name_age)
+require './name_age'
 
-PersonCreator.gets_name
+include(PersonCreator)
+
+gets_name
