@@ -1,8 +1,6 @@
-class PersonCreator
+require './input_tools'
 
-  def prompt
-    '  >    '
-  end
+module PersonCreator
 
   def user_input
     print prompt
