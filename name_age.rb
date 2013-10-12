@@ -2,11 +2,6 @@ require './input_tools'
 
 module PersonCreator
 
-  def user_input
-    print prompt
-    get_user_input = gets.chomp
-  end
-
   def gets_name
     puts 'Okay cool!  What\'s your name then?'
     name = user_input
@@ -50,7 +45,3 @@ module PersonCreator
   end
 
 end
-
-person = PersonCreator.new
-
-person.gets_name
