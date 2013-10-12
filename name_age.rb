@@ -1,4 +1,4 @@
-require './input_tools'
+include './input_tools'
 
 module PersonCreator
 

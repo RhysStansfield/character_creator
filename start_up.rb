@@ -1,3 +1,3 @@
-require './name_age'
+include './name_age'
 
 gets_name
