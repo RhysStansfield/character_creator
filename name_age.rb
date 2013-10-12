@@ -1,4 +1,5 @@
 require './input_tools'
+require './character'
 
 include(InputTools)
 
@@ -10,24 +11,24 @@ module PersonCreator
     check_name(name)
   end
 
-  def gets_age
+  def gets_age name
     puts 'Awesome, that\'s your name sorted - what is your age?'
     age = user_input
-    check_age(age)
+    check_age(name, age)
   end
 
-  def check_name(name)
+  def check_name name
     puts "So your name is #{name}, yes?"
     name_check = user_input.downcase
     return name_fail if name_check == 'no'
-    gets_age
+    gets_age(name)
   end
 
-  def check_age(age)
+  def check_age name, age
     puts "Okay, your age is #{age}?"
     age_check = user_input.downcase
     return age_fail if age_check == 'no'
-    puts success
+    success(name, age)
   end
 
   def name_fail
@@ -42,8 +43,11 @@ module PersonCreator
     check_age(new_age)
   end
 
-  def success
-    'Great!  Glad to know that\'s all sorted!'
+  def success name, age
+    puts 'Great!  Glad to know that\'s all sorted!'
+    puts "I'm just setting your character up for you..."
+    character = Character.new(name, age)
+    puts character.stats
   end
 
 end
